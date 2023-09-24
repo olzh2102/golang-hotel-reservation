@@ -3,3 +3,4 @@ go.mod
 vendor/
 *.exe
 *.out
+bin
