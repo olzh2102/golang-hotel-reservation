@@ -1,0 +1,16 @@
+### Create a new user
+POST http://localhost:3000/api/v1/user
+content-type: application/json
+
+{
+    "firstName": "L",
+    "lastName": "H",
+    "email": "luis@gosleep",
+    "password": "udsadas"
+}
+
+### List all users
+GET http://localhost:3000/api/v1/user
+
+### Get single user
+GET http://localhost:3000/api/v1/user/6516dfedee5bf4a81ef382cb
