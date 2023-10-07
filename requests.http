@@ -13,15 +13,15 @@ content-type: application/json
 GET http://localhost:3000/api/v1/user
 
 ### Get single user
-GET http://localhost:3000/api/v1/user/651e95ae8e7ad559a2375733
+GET http://localhost:3000/api/v1/user/651ea7e462549ed7bda18fee
 
 ### Delete user
 DELETE http://localhost:3000/api/v1/user/651e95ae8e7ad559a2375733
 
 ### Update user
-PUT http://localhost:3000/api/v1/user/651e957e8e7ad559a2375732
+PUT http://localhost:3000/api/v1/user/651ea7e462549ed7bda18fee
 content-type: application/json
 
 {
-    "firstName": "Stress"
+    "email": "jdnsad@dsa.com"
 }
