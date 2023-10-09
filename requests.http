@@ -25,3 +25,10 @@ content-type: application/json
 {
     "email": "jdnsad@dsa.com"
 }
+
+### Get hotels
+GET http://localhost:3000/api/v1/hotel
+
+### Get rooms
+GET http://localhost:3000/api/v1/hotel/65246500e1de659cfd752bb8
+
