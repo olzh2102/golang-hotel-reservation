@@ -3,14 +3,24 @@ POST http://localhost:3000/api/v1/user
 content-type: application/json
 
 {
-    "firstName": "Lsdsa",
-    "lastName": "Hdsadas",
+    "firstName": "Linda",
+    "lastName": "Muakliner",
     "email": "luis@gosleep.com",
-    "password": "udsadas"
+    "password": "password"
+}
+
+### Authenticate
+POST http://localhost:3000/api/auth
+content-type: application/json
+
+{
+    "email": "james@foo.com",
+    "password": "verystrongpassword"
 }
 
 ### List all users
 GET http://localhost:3000/api/v1/user
+x-api-token: dadasdasdasdasdas
 
 ### Get single user
 GET http://localhost:3000/api/v1/user/651ea7e462549ed7bda18fee
