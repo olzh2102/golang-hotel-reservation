@@ -38,6 +38,7 @@ content-type: application/json
 
 ### Get hotels
 GET http://localhost:3000/api/v1/hotel
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3MTA4ODIyLCJpZCI6IjY1MjRmNDI1NDIzZjAwY2E5YTM5OTJiOSJ9.ZlHKMrAJ0sB3Z2WVjAl-AKOBaUZqhWw0JRn_iX6AfnI
 
 ### Get rooms
 GET http://localhost:3000/api/v1/hotel/65246500e1de659cfd752bb8
