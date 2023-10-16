@@ -38,8 +38,25 @@ content-type: application/json
 
 ### Get hotels
 GET http://localhost:3000/api/v1/hotel
-x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3MTA4ODIyLCJpZCI6IjY1MjRmNDI1NDIzZjAwY2E5YTM5OTJiOSJ9.ZlHKMrAJ0sB3Z2WVjAl-AKOBaUZqhWw0JRn_iX6AfnI
-
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NDkwOTYxLCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.XV9-0lZNhNODNxajTl6ThQ2wTpOfJS3mHbxA64KZWa8
 ### Get rooms
 GET http://localhost:3000/api/v1/hotel/65246500e1de659cfd752bb8
 
+### Get rooms for hotel
+GET http://localhost:3000/api/v1/hotel/652ce25b8eced11cad2edc21/rooms
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NDkwOTYxLCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.XV9-0lZNhNODNxajTl6ThQ2wTpOfJS3mHbxA64KZWa8
+
+### Post room id to book
+POST http://localhost:3000/api/v1/room/652ce25b8eced11cad2edc23/book
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NDkwOTYxLCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.XV9-0lZNhNODNxajTl6ThQ2wTpOfJS3mHbxA64KZWa8
+content-type: application/json
+
+{
+    "numPersons": 2,
+    "fromDate": "2023-10-17T00:00:00Z",
+    "tillDate": "2023-11-25T00:00:00Z"
+}
+
+### Get all rooms
+GET http://localhost:3000/api/v1/room
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NDkwOTYxLCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.XV9-0lZNhNODNxajTl6ThQ2wTpOfJS3mHbxA64KZWa8
