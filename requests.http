@@ -44,7 +44,7 @@ GET http://localhost:3000/api/v1/hotel/65246500e1de659cfd752bb8
 
 ### Get rooms for hotel
 GET http://localhost:3000/api/v1/hotel/652ce25b8eced11cad2edc21/rooms
-x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NDkwOTYxLCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.XV9-0lZNhNODNxajTl6ThQ2wTpOfJS3mHbxA64KZWa8
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NTgxMTk5LCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.hqgL5klsjiILCVITNX3Z8NF9aw5MSRS_4L9qed3sFPI
 
 ### Post room id to book
 POST http://localhost:3000/api/v1/room/652ce25b8eced11cad2edc23/book
@@ -59,4 +59,12 @@ content-type: application/json
 
 ### Get all rooms
 GET http://localhost:3000/api/v1/room
-x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NDkwOTYxLCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.XV9-0lZNhNODNxajTl6ThQ2wTpOfJS3mHbxA64KZWa8
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NTgxMTk5LCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.hqgL5klsjiILCVITNX3Z8NF9aw5MSRS_4L9qed3sFPI
+
+### Get bookings
+GET http://localhost:3000/api/v1/admin/booking
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImV4cGlyZXMiOjE2OTc1ODMzOTAsImlkIjoiNjUyZWQ4MzViN2QyY2E5YjliNDZmYTU1In0.Af-vutDNeegHD8f81MkHNyb8km4-qqWJFouqUOxuMWs
+
+### Get booking
+GET http://localhost:3000/api/v1/booking/652d790fddbd2ef8efa8de2e
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NTgxMTk5LCJpZCI6IjY1MmNlMjViOGVjZWQxMWNhZDJlZGMyZCJ9.hqgL5klsjiILCVITNX3Z8NF9aw5MSRS_4L9qed3sFPI

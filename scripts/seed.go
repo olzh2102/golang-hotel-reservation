@@ -40,19 +40,21 @@ func main() {
 	seedHotel("Boq", "Shymkala", 5)
 	seedHotel("Sleep as dead men", "Newcastle", 4)
 
-	seedUser("james", "foo", "james@foo.com")
+	seedUser(false, "james", "foo", "james@foo.com", "verystrongpassword")
+	seedUser(true, "admin", "admin", "admin@admin.com", "adminpassword123")
 }
 
-func seedUser(fname, lname, email string) {
+func seedUser(isAdmin bool, fname, lname, email, password string) {
 	user, err := types.NewUserFromParams(types.CreateUserParams{
 		Email:     email,
 		FirstName: fname,
 		LastName:  lname,
-		Password:  "verystrongpassword",
+		Password:  password,
 	})
 	if err != nil {
 		log.Fatal(err)
 	}
+	user.IsAdmin = isAdmin
 	_, err = userStore.InsertUser(context.TODO(), user)
 	if err != nil {
 		log.Fatal(err)

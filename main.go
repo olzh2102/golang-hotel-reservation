@@ -43,13 +43,15 @@ func main() {
 			User:    userStore,
 			Booking: bookingStore,
 		}
-		userHandler  = api.NewUserHandler(userStore)
-		hotelHandler = api.NewHotelHandler(store)
-		roomHandler  = api.NewRoomHandler(store)
-		authHandler  = api.NewAuthHandler(userStore)
-		app          = fiber.New(config)
-		auth         = app.Group("/api")
-		apiv1        = app.Group("/api/v1", middleware.JWTAuthentication(userStore))
+		userHandler    = api.NewUserHandler(userStore)
+		hotelHandler   = api.NewHotelHandler(store)
+		roomHandler    = api.NewRoomHandler(store)
+		bookingHandler = api.NewBookingHandler(store)
+		authHandler    = api.NewAuthHandler(userStore)
+		app            = fiber.New(config)
+		auth           = app.Group("/api")
+		apiv1          = app.Group("/api/v1", middleware.JWTAuthentication(userStore))
+		admin          = apiv1.Group("/admin", middleware.AdminAuth)
 	)
 
 	auth.Post("/auth", authHandler.HandleAuthenticate)
@@ -66,6 +68,12 @@ func main() {
 
 	apiv1.Post("/room/:id/book", roomHandler.HandleBookRoom)
 	apiv1.Get("/room", roomHandler.HandleGetRooms)
+
+	// TODO: cancel a booking
+
+	apiv1.Get("/booking/:id", bookingHandler.HandleGetBooking)
+
+	admin.Get("/booking", bookingHandler.HandleGetBookings)
 
 	app.Get("/foo", handleFoo)
 
