@@ -68,12 +68,12 @@ func (h *AuthHandler) HandleAuthenticate(c *fiber.Ctx) error {
 	}
 	res := AuthResponse{
 		User:  user,
-		Token: createTokenFromUser(user),
+		Token: CreateTokenFromUser(user),
 	}
 	return c.JSON(res)
 }
 
-func createTokenFromUser(user *types.User) string {
+func CreateTokenFromUser(user *types.User) string {
 	now := time.Now()
 	expires := now.Add(time.Hour * 4).Unix()
 

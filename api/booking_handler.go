@@ -5,7 +5,6 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/olzh2102/golang-hotel-reservation/db"
-	"github.com/olzh2102/golang-hotel-reservation/types"
 	"go.mongodb.org/mongo-driver/bson"
 )
 
@@ -19,7 +18,31 @@ func NewBookingHandler(store *db.Store) *BookingHandler {
 	}
 }
 
-// TODO: this needs to be admin authorized
+func (h *BookingHandler) HandleCancelBooking(c *fiber.Ctx) error {
+	id := c.Params("id")
+	booking, err := h.store.Booking.GetBookingByID(c.Context(), id)
+	if err != nil {
+		return err
+	}
+	user, err := getAuthUser(c)
+	if err != nil {
+		return err
+	}
+	if booking.UserID != user.ID {
+		return c.Status(http.StatusUnauthorized).JSON(genericRes{
+			Type: "error",
+			Msg:  "not authorized",
+		})
+	}
+	if err := h.store.Booking.UpdateBooking(c.Context(), c.Params("id"), bson.M{"cancelled": true}); err != nil {
+		return err
+	}
+	return c.JSON(genericRes{
+		Type: "msg",
+		Msg:  "updated",
+	})
+}
+
 func (h *BookingHandler) HandleGetBookings(c *fiber.Ctx) error {
 	bookings, err := h.store.Booking.GetBookings(c.Context(), bson.M{})
 	if err != nil {
@@ -28,15 +51,14 @@ func (h *BookingHandler) HandleGetBookings(c *fiber.Ctx) error {
 	return c.JSON(bookings)
 }
 
-// TODO: this needs to be user authorized
 func (h *BookingHandler) HandleGetBooking(c *fiber.Ctx) error {
 	id := c.Params("id")
-	booking, err := h.store.Booking.GetBooking(c.Context(), id)
+	booking, err := h.store.Booking.GetBookingByID(c.Context(), id)
 	if err != nil {
 		return err
 	}
-	user, ok := c.Context().UserValue("user").(*types.User)
-	if !ok {
+	user, err := getAuthUser(c)
+	if err != nil {
 		return err
 	}
 	if booking.UserID != user.ID {
