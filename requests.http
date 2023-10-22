@@ -37,9 +37,8 @@ content-type: application/json
 }
 
 ### Get hotels
-GET http://localhost:3000/api/v1/hotel
-x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk3NjIyMDI3LCJpZCI6IjY1MmY2ZmNiMzRhYmU2NzMwNzAxMDc2ZSJ9.w0FAWUxM3t6FDblqitTNAjano7T0LO8nPx3_n714TMQ
-
+GET http://localhost:3000/api/v1/hotel/asdasdasda
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCsJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk4MDA3MTc1LCJpZCI6IjY1MzU1MDQ3MTVjNTk3NWY2ZDQ2OWQ1MCJ9.4G9JG9fQGYMo1HvfUVISxozU2hBEvDx39Mky9cDcmFI
 ### Get rooms
 GET http://localhost:3000/api/v1/hotel/65246500e1de659cfd752bb8
 
