@@ -39,8 +39,8 @@ x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb2
 }
 
 ### Get hotels
-GET http://localhost:3000/api/v1/hotel/asdasdasda
-x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCsJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk4MDA3MTc1LCJpZCI6IjY1MzU1MDQ3MTVjNTk3NWY2ZDQ2OWQ1MCJ9.4G9JG9fQGYMo1HvfUVISxozU2hBEvDx39Mky9cDcmFI
+GET http://localhost:3000/api/v1/hotel?page=10&limit=10&rating=3
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk4MzU1OTQwLCJpZCI6IjY1M2FhMmE0YzQxYTI3Y2YwNGVhMzdmYiJ9.JWmGWaEmpz0Qhv-zBEW8l_pJDUiPTHAKiDommzQ3X7k
 ### Get rooms
 GET http://localhost:3000/api/v1/hotel/65246500e1de659cfd752bb8
 
