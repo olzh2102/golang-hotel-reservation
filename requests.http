@@ -20,20 +20,22 @@ content-type: application/json
 
 ### List all users
 GET http://localhost:3000/api/v1/user
-x-api-token: dadasdasdasdasdas
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk4MzE2MzM3LCJpZCI6IjY1M2EwN2YxMDJlZTVkNzViN2U1NjNlMSJ9.4d6ts4XrE7YvL2TPRVG1AUJ-Yz_zVzJaaoI1n0fAmO4
 
 ### Get single user
-GET http://localhost:3000/api/v1/user/651ea7e462549ed7bda18fee
+GET http://localhost:3000/api/v1/user/653a07f102ee5d75b7e563e1
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk4MzE2MzM3LCJpZCI6IjY1M2EwN2YxMDJlZTVkNzViN2U1NjNlMSJ9.4d6ts4XrE7YvL2TPRVG1AUJ-Yz_zVzJaaoI1n0fAmO4
 
 ### Delete user
 DELETE http://localhost:3000/api/v1/user/651e95ae8e7ad559a2375733
 
 ### Update user
-PUT http://localhost:3000/api/v1/user/651ea7e462549ed7bda18fee
+PUT http://localhost:3000/api/v1/user/653a07f102ee5d75b7e563e1
 content-type: application/json
+x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk4MzE2MzM3LCJpZCI6IjY1M2EwN2YxMDJlZTVkNzViN2U1NjNlMSJ9.4d6ts4XrE7YvL2TPRVG1AUJ-Yz_zVzJaaoI1n0fAmO4
 
 {
-    "email": "jdnsad@dsa.com"
+    "firstName": "Michael"
 }
 
 ### Get hotels
