@@ -27,7 +27,9 @@ func TestUserGetBooking(t *testing.T) {
 		till    = time.Now().AddDate(0, 0, 5)
 		booking = fixtures.AddBooking(tdb.Store, user.ID, room.ID, from, till)
 
-		app            = fiber.New()
+		app = fiber.New(fiber.Config{
+			ErrorHandler: ErrorHandler,
+		})
 		route          = app.Group("/", JWTAuthentication(tdb.User))
 		bookingHandler = NewBookingHandler(tdb.Store)
 	)
@@ -112,7 +114,6 @@ func TestAdminGetBookings(t *testing.T) {
 	}
 
 	// * test non-admin cannot access the bookings
-
 	req = httptest.NewRequest("GET", "/", nil)
 	req.Header.Add("X-Api-Token", CreateTokenFromUser(user))
 	res, err = app.Test(req)

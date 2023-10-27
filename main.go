@@ -79,8 +79,8 @@ func main() {
 
 	admin.Get("/booking", bookingHandler.HandleGetBookings)
 
-	listenAddr := os.Getenv("HTTP_LISTEDN_ADDRESS")
-	app.Listen(listenAddr)
+	listenAddr := os.Getenv("HTTP_LISTEN_ADDRESS")
+	app.Listen(":" + listenAddr)
 }
 
 func init() {
