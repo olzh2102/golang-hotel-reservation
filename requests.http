@@ -39,7 +39,7 @@ x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb2
 }
 
 ### Get hotels
-GET http://localhost:3000/api/v1/hotel?page=10&limit=10&rating=3
+GET http://localhost:3000/api/v1/hotel?page=1&limit=2&rating=5
 x-api-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGZvby5jb20iLCJleHBpcmVzIjoxNjk4MzU1OTQwLCJpZCI6IjY1M2FhMmE0YzQxYTI3Y2YwNGVhMzdmYiJ9.JWmGWaEmpz0Qhv-zBEW8l_pJDUiPTHAKiDommzQ3X7k
 ### Get rooms
 GET http://localhost:3000/api/v1/hotel/65246500e1de659cfd752bb8
